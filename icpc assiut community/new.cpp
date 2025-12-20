@@ -1,3 +1,19 @@
-//
-// Created by asad on 11/13/25.
-//
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int t;
+    cin >> t;
+    while(t--) {
+        int n;
+        cin >> n;
+        vector<string> contacts;
+        for (int i=0;i<n;i++) {
+            cin>>contacts[i];
+        }
+
+    }
+}
+

@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<bits/stdc++.h>
  void print(int n)
 {
   cout<<n<<"\n";
