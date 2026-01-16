@@ -1,78 +1,22 @@
-
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-class node
+int main()
 {
-    public:
-    int val;
-    node* next;
-    
-node(int val)
-{
-    this->val = val;
-    this->next = NULL;
-}    
-};
-void insert_at_tail(node* &head,node* &tail,int val)
-{
-    node* newnode = new node (val);
-if(head==NULL)
-{
-    head = newnode;
-    tail = newnode;
-}
+    int arr[5] = {10,20,30,40,50};
 
-        tail->next = newnode;
-        tail = tail->next; // or tail = newnode;
-}
-void print_linklist(node* head)
-{
-      node* temp = head;
-    while(temp != NULL)
-    {
-        cout<<temp->val<<endl;
-        temp = temp->next;
-    }
-}
-void delete_at_tail(node* &head,node* &tail,int idx)
-{
-    node* tmp = head;
-    for(int i=1;i<idx;i++)
-    {
-       tmp = tmp->next; 
-    }
-    node* deletenode = tmp->next;
-    tmp->next = tmp->next->next;
-    delete deletenode;
-    tail = tmp;
-}
-int count(node* head)
-{
-    node* tmp = head;
-    int count = 0;
+    int l =0 ;
+    int r = 2;
 
-    while(tmp->next != NULL)
+    arr[l] = 0;
+    int  idx = l + 1;
+    for(int i = r + 1;i<5;i++)
     {
-        tmp = tmp->next;
-        count++;
+        arr[idx++] = arr[i];
     }
-    return count;
-}
-int main() {
-    node* head = NULL;
-    node* tail = NULL;
-    int val;
-    while(true)
+    int n = sizeof(arr) / sizeof(arr[0]);
+    n = n -(r - l);
+    for(int i=0;i<n;i++)
     {
-        cin>>val;
-        if(val == -1)
-        {
-            break;
-        }
-        insert_at_tail(head,tail,val);
+        cout<<arr[i]<<" ";
     }
-    // int c = count(head);
-       delete_at_tail(head,tail,count(head));
-       print_linklist(head);
-                  
 }
