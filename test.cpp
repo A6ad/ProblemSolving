@@ -20,3 +20,4 @@ int main()
         cout<<arr[i]<<" ";
     }
 }
+// this algorithm deletes an specific subarray and replaces them with 0
