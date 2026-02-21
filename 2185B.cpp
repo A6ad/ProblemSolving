@@ -17,25 +17,33 @@ int main()
         {
             cin>>a[i];
         }
-        vector<int> original(n);
-        vector<pair<int,int>> operations;
+        vector<int> secondary_array = a;
+
+        vector<pair<int,int>> operations(m);
 
         int last_crush_index = -1;
 
         for (int i=0;i<m;i++) {
             int b,c;
             cin>>b>>c;
-            operations[i] = {b-1,c};
-            original[operations[i].first] += operations[i].second;
+            int idx =b-1;
+            operations[i] = {idx,c};
+            secondary_array[idx] += c;
 
 
-            if (original[operations[i].first] > h)   {
+            if (secondary_array[idx] > h)   {
                 last_crush_index = i;
+                secondary_array = a;
             }
         }
-for (int i=last_crush_index -1 ;i<m;i++) {
-
+for (int i=last_crush_index + 1 ;i<m;i++) {
+    a[operations[i].first] += operations[i].second;
 }
+        for (int x : a) {
+            cout<<x<<" ";
+        }
+    cout<<endl;
     }
-     
+
+
 }

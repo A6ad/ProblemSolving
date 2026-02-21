@@ -9,20 +9,19 @@ int main()
     cin>>t;
     for(int i=0;i<t;i++)
     {
-        int x,y;
+        long long x,y;
         cin>>x>>y;
+        
+        int k = y/x;
 
-        int k = 0;
-        if(y/x*10 > 1)
+        int ans = 0;
+        while(k>0)
         {
-            x = x * 10;
-            k++;
+            ans += k % 10;
+            k /=10;
         }
-        else 
-        {
-            y = y - x;
-            k = y/ x;
-        }
-        cout<<k<<endl;
+        cout<<ans+y%x<<endl;
+        
+        
     }
 }

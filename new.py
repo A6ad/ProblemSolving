@@ -1,18 +1,29 @@
-class shop:
-    cart = []
+tasks = []
+def displayTasks(all_tasks):
+    print("\nYour tasks: ")
+def newOperation(all_tasks):
+    operation = input("clack 'A' to add a task ,click 'E' to edit a task ,'R' to remove a task,'F' to quit the app") 
+    if operation=='A':
+        pass
+    elif operation == 'E':
+        pass
+    elif operation == 'R':
+        pass
+    elif operation == 'F':
+        return 
+    else:
+        newOperation(all_tasks)
 
-    def __init__(self,buyer):
-        self.buyer = buyer
-
-    def addtocart(self,item):
-        self.cart.append(item)   
 
 
-p1 = shop('meh')
-p1.addtocart('shoes')
-p1.addtocart('phone')
 
-nish = shop('noisho')
-nish.addtocart('cap')
-nish.addtocart('watch')
-print(nish.cart)
+def addtask(all_tasks):
+    new_task = input('add a task: ')
+    all_tasks.append(new_task)
+
+    for task in all_tasks:
+        print(task)
+
+#start application 
+newOperation(tasks)
+addtask(tasks)
