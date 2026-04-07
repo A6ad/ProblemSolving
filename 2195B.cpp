@@ -17,11 +17,18 @@ int main() {
             cin>>arr[i];
         }
 
-        for (int i=0,j=arr.size()-1;i<j;i++,j--) {
-            if (arr[i]>arr[j]) {
-                swap(arr[i],arr[j]);
-            }
+
+       for (int i=0;i<n;i++) {
+           if (i%2 == 0 && arr[i]>arr[2*i]) {
+               swap(arr[i],arr[2*i]);
+           }
+       }
+
+
+        for (int x : arr) {
+            cout<<x<<" ";
         }
+cout<<endl;
         int s = arr.size();
 
         vector<int> arr2(s);
