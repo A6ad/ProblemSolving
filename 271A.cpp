@@ -9,7 +9,7 @@ int main() {
     cin.tie(nullptr);
 
     int y;
-    cin>>y;
+    cin>>y;116
     set<int> s;
 
     while (true) {
